@@ -5,12 +5,12 @@ pipeline {
   stages {
     stage('Status') {
       steps {
-        sh 'liquibase status --url="jdbc:sqlserver://liquibase-demoserver.database.windows.net:1433;database=Liquibase-Demo-db;user=adminlogin@liquibase-demoserver;password=Liquibase@123;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net" 
+        sh 'liquibase status --url="jdbc:sqlserver://liquibase-demoserver.database.windows.net:1433;database=Liquibase-Demo-db;user=adminlogin@liquibase-demoserver;password=Liquibase@123"
       }
     }
     stage('Update') {
       steps {
-        sh 'liquibase update --url="jdbc:sqlserver://liquibase-demoserver.database.windows.net:1433;database=Liquibase-Demo-db;user=adminlogin@liquibase-demoserver;password=Liquibase@123;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net"
+        sh 'liquibase update --url="jdbc:sqlserver://liquibase-demoserver.database.windows.net:1433;database=Liquibase-Demo-db;user=adminlogin@liquibase-demoserver;password=Liquibase@123"
       }
     }
   }
