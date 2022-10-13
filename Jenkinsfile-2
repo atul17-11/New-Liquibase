@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Status') {
       steps {
-        sh 'liquibase status --search-path=C:/Liquibase-Demo --changelogfile=changelog.xml --url="jdbc:sqlserver://liquibase-demoserver.database.windows.net:1433;database=Liquibase-Demo-db;user=adminlogin@liquibase-demoserver;password=Liquibase@123;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30"'
+        sh 'liquibase status --changelogfile=changelog.xml --url="jdbc:sqlserver://liquibase-demoserver.database.windows.net:1433;database=Liquibase-Demo-db;user=adminlogin@liquibase-demoserver;password=Liquibase@123;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30"'
       }
     }
     stage('Update') {
