@@ -3,7 +3,7 @@
 --changeset your.name:1 labels:example-label context:example-context
 --comment: example comment
 create table person (
-    id int primary key auto_increment not null,
+    id int identity(1,1) PRIMARY KEY,
     name varchar(50) not null,
     address1 varchar(50),
     address2 varchar(50),
@@ -14,7 +14,7 @@ create table person (
 --changeset your.name:2 labels:example-label context:example-context
 --comment: example comment
 create table company (
-    id int primary key auto_increment not null,
+    id int identity(1,1) PRIMARY KEY,
     name varchar(50) not null,
     address1 varchar(50),
     address2 varchar(50),
