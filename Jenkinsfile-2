@@ -8,16 +8,6 @@ pipeline {
         sh 'liquibase init project --project-dir=${workspace} --changelog-file=dbchangelog.sql --format=sql --project-defaults-file=[liquibase.properties] --url=jdbc:sqlserver://newliquibasedb.database.windowsnewliquibasedb.net:1433 --username=SAadmin --password=Liquibase@123'
       }
     }
-    stage('Status') {
-      steps {
-        sh 'liquibase --search-path=${workspace} --changelogfile=changelog.sql --url="jdbc:sqlserver://liquibasedemo.database.windows.net:1433;database=newliquibasedb;user=SAadmin@newliquibasedb;password=Liquibase@123;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30"  status'
-      }
-    }
-    stage('Update') {
-      steps {
-        sh 'liquibase --search-path=${workspace}  --changelogfile=changelog.sql --url="jdbc:sqlserver://liquibasedemo.database.windows.net:1433;database=newliquibasedb;user=SAadmin@liquibasedemo;password=Liquibase@123;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30"  update'
-      }
-    }
   }
   post {
     always {
