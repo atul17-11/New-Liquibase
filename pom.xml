@@ -15,12 +15,14 @@
                        <version>3.8.0</version>  
                        <configuration>  
                            <propertyFile>liquibase.properties</propertyFile>  
+                           <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                           <logging>debug</logging>
                        </configuration>  
                        <dependencies>  
                          <dependency>  
-                             <groupId>postgresql</groupId>  
-                             <artifactId>postgresql</artifactId>  
-                             <version>9.1-901-1.jdbc4</version>  
+                             <groupId>com.microsoft.sqlserver</groupId>
+                             <artifactId>mssql-jdbc</artifactId>
+                             <version>8.2.2.jre8</version>
                          </dependency>  
                      </dependencies>  
                    </plugin>  
