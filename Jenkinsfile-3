@@ -1,0 +1,11 @@
+def server = Artifactory.server 'Artifactory'
+
+def uploadSpec = """{
+  "files": [
+    {
+      "target": "ind-test/"
+      "pattern": changelog.sql
+    }
+ ]
+}"""
+server.upload spec: uploadSpec 
