@@ -1,11 +1,24 @@
-def server = Artifactory.server 'Artifactory'
-
-def uploadSpec = """{
-  "files": [
-    {
-      "target": "ind-test/"
-      "pattern": changelog.sql
-    }
- ]
-}"""
+pipeline {
+  
+  agent any
+  
+  def server = Artifactory.server 'Artifactory'
+  stages {
+    stage('upload-artifact'){
+    steps{
+    def uploadSpec = """{
+        "files": [
+         {
+            "target": "ind-test/"
+            "pattern": changelog.sql
+         }
+        ]
+    }"""
 server.upload spec: uploadSpec 
+     }
+    }
+  }
+}
+
+
+
