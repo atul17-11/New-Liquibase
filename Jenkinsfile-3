@@ -2,10 +2,11 @@ pipeline {
   
   agent any
   
-  def server = Artifactory.server 'Artifactory'
+  
   stages {
     stage('upload-artifact'){
     steps{
+    def server = Artifactory.server 'Artifactory'
     def uploadSpec = """{
         "files": [
          {
