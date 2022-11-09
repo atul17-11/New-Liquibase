@@ -1,3 +1,5 @@
+
+def server = Artifactory.server 'Artifactory'
 pipeline {
   
   agent any
@@ -6,7 +8,7 @@ pipeline {
   stages {
     stage('upload-artifact'){
     steps{
-    def server = Artifactory.server 'Artifactory'
+      script {
     def uploadSpec = """{
         "files": [
          {
@@ -14,11 +16,12 @@ pipeline {
             "pattern": changelog.sql
          }
         ]
-    }"""
-server.upload spec: uploadSpec 
-     }
+     }"""
+    server.upload spec: uploadSpec 
     }
+   }
   }
+ }
 }
 
 
