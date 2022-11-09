@@ -4,7 +4,9 @@ pipeline {
   
   agent any
   
-  
+  environment {
+  LIQUIBASE_COMMAND_CHANGELOG_FILE="changelog.sql"
+  }
   stages {
     stage('upload-artifact'){
     steps{
@@ -13,7 +15,7 @@ pipeline {
         "files": [
          {
             "target": "ind-test/",
-            "pattern": changelog.sql
+            "pattern": "$LIQUIBASE_COMMAND_CHANGELOG_FILE"
          }
         ]
      }"""
