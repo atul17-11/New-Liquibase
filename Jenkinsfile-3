@@ -1,7 +1,7 @@
 @Library(['jenkins2-shared-library'])_ 
 def server = Artifactory.server 'Artifactory'
 def buildInfo
-//def version = "1.0.0.${BUILD_NUMBER}"
+def version = "1.0.0.${BUILD_NUMBER}"
 def rtMaven = Artifactory.newMavenBuild()
 pipeline {
   
