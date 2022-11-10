@@ -1,4 +1,4 @@
-@Library(['jenkins2-shared-library'])_ 
+//@Library(['jenkins2-shared-library'])_ 
 def server = Artifactory.server 'Artifactory'
 def buildInfo
 def version = "1.0.0.${BUILD_NUMBER}"
