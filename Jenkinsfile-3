@@ -1,7 +1,7 @@
 
 def server = Artifactory.server 'Artifactory'
 def buildInfo
-#def version = "1.0.0.${BUILD_NUMBER}"
+//def version = "1.0.0.${BUILD_NUMBER}"
 def rtMaven = Artifactory.newMavenBuild()
 pipeline {
   
@@ -37,7 +37,7 @@ pipeline {
 						  }]
 						}"""
 						server.download(downloadSpec)
-						#env.database="Embark_Extract_Dev"
+						//env.database="Embark_Extract_Dev"
 						env.propfile="liquibase.properties"
 						creds = "db-creds"
 						withCredentials([usernamePassword(credentialsId: "$creds", passwordVariable: 'password', usernameVariable: 'username')]) {
