@@ -17,7 +17,7 @@ pipeline {
    		 def uploadSpec = """{
       		  "files": [
          		{
-				"target": "ind-test/upload/*.sql",
+				"target": "ind-test/upload/$LIQUIBASE_COMMAND_CHANGELOG_FILE.sql",
 				"pattern": "$LIQUIBASE_COMMAND_CHANGELOG_FILE"
          		}
         		]
