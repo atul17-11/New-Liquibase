@@ -45,7 +45,7 @@ pipeline {
 							rtMaven.resolver releaseRepo: 'ind-test', snapshotRepo: 'default-libs-snapshot', server: server
 							buildInfo = Artifactory.newBuildInfo()
 							rtBuildInfo(captureEnv: true, )
-							//sh "cp ind-test/lvtest/$LIQUIBASE_COMMAND_CHANGELOG_FILE $LIQUIBASE_COMMAND_CHANGELOG_FILE"
+							sh "cp ind-test/download/$LIQUIBASE_COMMAND_CHANGELOG_FILE $LIQUIBASE_COMMAND_CHANGELOG_FILE"
 							rtMaven.run pom: 'pom.xml', goals: "liquibase:tag -Djavax.net.ssl.trustStore=/opt/jenkins/home/truststore -Djavax.net.ssl.trustStorePassword=changeit -Dliquibase.username=$username -Dliquibase.password=$password -Dliquibase.tag=${version}".toString(), buildInfo: buildInfo
 							rtMaven.run pom: 'pom.xml', goals: "liquibase:update -Djavax.net.ssl.trustStore=/opt/jenkins/home/truststore -Djavax.net.ssl.trustStorePassword=changeit -Dliquibase.username=$username -Dliquibase.password=$password".toString(), buildInfo: buildInfo
 						}
