@@ -11,23 +11,23 @@ pipeline {
   LIQUIBASE_COMMAND_CHANGELOG_FILE="changelog.sql"
   }
   stages {
-    stage('upload-artifact'){
-    steps{
-      script {
-    def uploadSpec = """{
-        "files": [
-         {
-            "target": "ind-test/",
-            "pattern": "$LIQUIBASE_COMMAND_CHANGELOG_FILE"
-         }
-        ]
-     }"""
-    server.upload spec: uploadSpec 
-    }
-   }
-  }
+    	stage('upload-artifact'){
+   	 steps{
+    	  script {
+   		 def uploadSpec = """{
+      		  "files": [
+         		{
+          		  "target": "ind-test/",
+            		  "pattern": "$LIQUIBASE_COMMAND_CHANGELOG_FILE"
+         		}
+        		]
+     			}"""
+    		server.upload spec: uploadSpec 
+    			}
+  		 }
+  	}
  
- stage('Deploy to Dev') {
+ 	stage('Deploy to Dev') {
 			steps {
 				script {
 						downloadSpec = """{
