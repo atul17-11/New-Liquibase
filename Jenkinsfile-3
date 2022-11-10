@@ -32,7 +32,7 @@ pipeline {
 				script {
 						downloadSpec = """{
 						  "files": [{
-								"target": "download/$LIQUIBASE_COMMAND_CHANGELOG_FILE",
+								"target": "ind-test/download/$LIQUIBASE_COMMAND_CHANGELOG_FILE",
 								"pattern": "ind-test/upload/*.sql"
 						  }]
 						}"""
