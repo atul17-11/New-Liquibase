@@ -17,8 +17,8 @@ pipeline {
    		 def uploadSpec = """{
       		  "files": [
          		{
-          		  "target": "ind-test/",
-            		  "pattern": "$LIQUIBASE_COMMAND_CHANGELOG_FILE"
+				"target": "ind-test/upload/*.sql",
+				"pattern": "$LIQUIBASE_COMMAND_CHANGELOG_FILE"
          		}
         		]
      			}"""
@@ -32,8 +32,8 @@ pipeline {
 				script {
 						downloadSpec = """{
 						  "files": [{
-							"target": "ind-test/",
-							"pattern": "$LIQUIBASE_COMMAND_CHANGELOG_FILE"
+								"target": "download/$LIQUIBASE_COMMAND_CHANGELOG_FILE",
+								"pattern": "ind-test/upload/*.sql"
 						  }]
 						}"""
 						server.download(downloadSpec)
