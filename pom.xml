@@ -20,6 +20,11 @@
                        </configuration>  
                        <dependencies>
                          <dependency>  
+                             <groupId>org.liquibase</groupId>
+                             <artifactId>liquibase-core</artifactId>
+                             <version>4.17.2</version>
+                         </dependency>  
+                         <dependency>  
                              <groupId>com.microsoft.sqlserver</groupId>
                              <artifactId>mssql-jdbc</artifactId>
                              <version>11.2.0.jre17</version>
