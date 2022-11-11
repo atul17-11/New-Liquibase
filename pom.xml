@@ -10,17 +10,20 @@
            <pluginManagement>  
                <plugins>  
                    <plugin>  
-                       <dependency>
-                        <groupId>org.liquibase</groupId>
-                        <artifactId>liquibase-maven-plugin</artifactId>
-                        <version>4.2.2</version>
-                       </dependency> 
+                       <groupId>org.liquibase</groupId>  
+                       <artifactId>liquibase-maven-plugin</artifactId>  
+                       <version>4.17.2</version> 
                        <configuration>  
                            <propertyFile>liquibase.properties</propertyFile>  
                            <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                            <logging>debug</logging>
                        </configuration>  
-                       <dependencies>  
+                       <dependencies>
+                         <dependency>
+                              <groupId>org.liquibase</groupId>
+                              <artifactId>liquibase-maven-plugin</artifactId>
+                              <version>4.17.2</version>
+                         </dependency>
                          <dependency>  
                              <groupId>com.microsoft.sqlserver</groupId>
                              <artifactId>mssql-jdbc</artifactId>
