@@ -6,7 +6,20 @@
        <groupId>com.my-group.app</groupId>  
        <artifactId>LiquiMSSQL-app</artifactId>  
        <version>1.0-SNAPSHOT</version>  
-       <build>  
+      
+      <dependencies>
+                         <dependency>  
+                             <groupId>org.liquibase</groupId>
+                             <artifactId>liquibase-core</artifactId>
+                             <version>4.17.2</version>
+                         </dependency>  
+                         <dependency>  
+                             <groupId>com.microsoft.sqlserver</groupId>
+                             <artifactId>mssql-jdbc</artifactId>
+                             <version>11.2.0.jre17</version>
+                         </dependency>  
+                     </dependencies>   
+      <build>  
            <pluginManagement>  
                <plugins>  
                    <plugin>  
@@ -18,18 +31,7 @@
                            <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                            <logging>debug</logging>
                        </configuration>  
-                       <dependencies>
-                         <dependency>  
-                             <groupId>org.liquibase</groupId>
-                             <artifactId>liquibase-core</artifactId>
-                             <version>4.17.2</version>
-                         </dependency>  
-                         <dependency>  
-                             <groupId>com.microsoft.sqlserver</groupId>
-                             <artifactId>mssql-jdbc</artifactId>
-                             <version>11.2.0.jre17</version>
-                         </dependency>  
-                     </dependencies>  
+                       
                    </plugin>  
                </plugins>  
            </pluginManagement>  
