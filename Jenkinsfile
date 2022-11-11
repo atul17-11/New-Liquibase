@@ -41,7 +41,7 @@ pipeline {
 						env.propfile="liquibase.properties"
 						creds = "db-creds"
 						withCredentials([usernamePassword(credentialsId: "$creds", passwordVariable: 'password', usernameVariable: 'username')]) {
-							rtMaven.tool = 'maven-3.8.6'
+							rtMaven.tool = 'Maven'
 							rtMaven.resolver releaseRepo: 'ind-test', snapshotRepo: 'default-libs-snapshot', server: server
 							buildInfo = Artifactory.newBuildInfo()
 							rtBuildInfo(captureEnv: true, )
